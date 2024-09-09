@@ -1,0 +1,6 @@
+#!/bin/bash
+#creating the file with two ip adress
+#ipfile
+for ip in 'catipfile';do
+echo $ip
+done

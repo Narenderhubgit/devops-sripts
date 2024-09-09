@@ -1,0 +1,19 @@
+#!/bin/bash
+#install java 
+sudo yum install java -y
+#Download tomcat in /opt/
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.93/bin/apache-tomcat-9.0.93-windows-x64.zip 
+#Unzip tomcat
+unzip apache-tomcat-9.0.93-windows-x64.zip
+#Rename tomcat
+mv apache-tomcat-9.0.93/ tomcat9
+#remove zip
+rm -rf apache-tomcat-9.0.93-windows-x64.zip
+#Change permissions of tomcat9
+chmod -R 700 tomcat9
+#change directory to bin
+cd /opt/tomcat9/bin
+#Start the tomcat
+./startup.sh
+#check the server running or not locally
+curl -I http://localhost:8080
